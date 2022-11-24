@@ -5,11 +5,10 @@
         "node": true
     },
     "extends": "airbnb-base",
-    "overrides": [
-    ],
+    "overrides": [],
     "parserOptions": {
         "ecmaVersion": "latest"
     },
-    "rules": {
-    }
+    "rules": {},
+    "editor.tabSize": 2
 }
