@@ -34,6 +34,7 @@ const addNoteHandler = (request, h) => {
     });
     response.code(500);
     return response;
+
 };
 
 const getAllNotesHandler = () => ({
@@ -63,6 +64,7 @@ const getNoteByIdHandler = (request, h) => {
     });
     response.code(404);
     return response;
+
 };
 
 const editNoteByIdHandler = (request, h) => {
@@ -97,6 +99,7 @@ const editNoteByIdHandler = (request, h) => {
     });
     response.code(404);
     return response;
+
 };
 
 const deleteNoteByIdHandler = (request, h) => {
@@ -105,7 +108,22 @@ const deleteNoteByIdHandler = (request, h) => {
 
     const index = notes.findIndex((n) => n.id == id);
 
+    if (index != -1) {
+        notes.splice(index, 1);
+        const response = h.response({
+            status: 'success',
+            message: 'Catatan berhasil dihapus',
+        });
+        response.code(200);
+        return response;
+    }
 
+    const response = h.response({
+        status: 'fail',
+        message: 'Catatan gagal dihapus. Id tidak ditemukan',
+    });
+    response.code(404);
+    return response;
 
 };
 
