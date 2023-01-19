@@ -58,7 +58,7 @@ class NotesHandler {
 		}
 	}
 
-	putNoteByIdHandler(request) {
+	putNoteByIdHandler(request, h) {
 		try {
 			const { id } = request.params;
 
@@ -78,7 +78,7 @@ class NotesHandler {
 		}
 	}
 
-	deleteNoteByIdHanlder(request) {
+	deleteNoteByIdHandler(request, h) {
 		try {
 			const { id } = request.params;
 
