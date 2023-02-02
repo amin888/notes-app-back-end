@@ -35,8 +35,8 @@ class NotesService {
 
 	async getNoteById(id) {
 		const query = {
-			text: "SELECT * FROM notes WHERE id = $1",
-			value: [id],
+			text: "SELECT * FROM notes WHERE id=$1",
+			values: [id],
 		};
 		const result = await this._pool.query(query);
 
@@ -67,7 +67,7 @@ class NotesService {
 		};
 		const result = await this._pool.query(query);
 
-		if ($result.rows.length) {
+		if (!result.rows.length) {
 			throw new NotFoundError("Catatan gagal dihapus. Id tidak ditemukan");
 		}
 	}
