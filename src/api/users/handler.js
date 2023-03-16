@@ -29,7 +29,7 @@ class UsersHandler {
 			if (error instanceof ClientError) {
 				const response = h.response({
 					status: "fail",
-					message: error.messge,
+					message: error.message,
 				});
 				response.code(error.statusCode);
 				return response;
