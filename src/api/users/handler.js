@@ -52,7 +52,7 @@ class UsersHandler {
 			const user = await this._service.getUserById(id);
 
 			return {
-				status: "status",
+				status: "success",
 				data: {
 					user,
 				},
